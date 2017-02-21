@@ -1,7 +1,7 @@
 {
-  "name": "extenstion-starter",
+  "name": "extenstion-boilerplate",
   "version": "0.0.1",
-  "description": "Boilerplate for creating cross-browser extensions",
+  "description": "A template for creating cross-browser extensions",
   "scripts": {
     "chrome-build": "TARGET=chrome gulp",
     "opera-build": "TARGET=opera gulp",
@@ -17,13 +17,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/EmailThis/extension-starter"
+    "url": "https://github.com/EmailThis/extension-boilerplate"
   },
   "author": "Bharani <bharani91@gmail.com> (https://github.com/bharani91)",
   "bugs": {
-    "url": "https://github.com/EmailThis/extension-starter/issues"
+    "url": "https://github.com/EmailThis/extension-boilerplate/issues"
   },
-  "homepage": "https://www.emailthis.me/extension-starter",
+  "homepage": "https://www.emailthis.me/extension-boilerplate",
   "devDependencies": {
     "babel-core": "^6.1.2",
     "babel-preset-es2015": "^6.1.2",

@@ -50,25 +50,28 @@ I have extracted this from the browser extensions that I built for my side-proje
 
 
 ## Installation
-1. Clone the repository `git clone https://github.com/EmailThis/ext-starter.git`
+1. Clone the repository `git clone https://github.com/EmailThis/extension-boilerplate.git`
 2. Run `npm install`
 3. Run `npm run build`
 
 ##### Load the extension in Chrome & Opera
-1. Open Chrome browser and navigate to chrome://extensions
+1. Open Chrome/Opera browser and navigate to chrome://extensions
 2. Select "Developer Mode" and then click "Load unpacked extension..."
-3. From the file browser, choose to `ext-starter/build/chrome` or (`ext-starter/build/opera`)
+3. From the file browser, choose to `extension-boilerplate/build/chrome` or (`extension-boilerplate/build/opera`)
 
 
 ##### Load the extension in Firefox
 1. Open Firefox browser and navigate to about://debugging
-2. Click "Load Temporary Add-on" and from the file browser, choose `ext-starter/build/firefox`
+2. Click "Load Temporary Add-on" and from the file browser, choose `extension-boilerplate/build/firefox`
 
 
 ## Developing
 The following tasks can be used when you want to start developing the extension and want to enable live reload - 
+
 `npm rum chrome-watch`
+
 `npm run opera-watch`
+
 `npm run firefox-watch`
 
 

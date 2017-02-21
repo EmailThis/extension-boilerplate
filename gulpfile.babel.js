@@ -11,6 +11,11 @@ const $ = require('gulp-load-plugins')();
 
 var production = process.env.NODE_ENV === "production";
 var target = process.env.TARGET || "chrome";
+var environment = process.env.NODE_ENV || "development";
+
+var generic = JSON.parse(fs.readFileSync(`./config/${environment}.json`));
+var specific = JSON.parse(fs.readFileSync(`./config/${target}.json`));
+var context = Object.assign({}, generic, specific);
 
 var manifest = {
   dev: {
@@ -59,7 +64,7 @@ gulp.task('ext', ['manifest', 'js'], () => {
 // COMMON
 // -----------------
 gulp.task('js', () => {
-  return buildJs(target)
+  return buildJS(target)
 })
 
 gulp.task('styles', () => {
@@ -117,7 +122,7 @@ function mergeAll(dest) {
   )
 }
 
-function buildJs(target, env) {
+function buildJS(target) {
   const files = [
     'background.js',
     'contentscript.js',
@@ -132,6 +137,10 @@ function buildJs(target, env) {
       debug: true
     })
     .transform('babelify', { presets: ['es2015'] })
+    .transform(preprocessify, {
+      includeExtensions: ['.js'],
+      context: context
+    })
     .bundle()
     .pipe(source(file))
     .pipe(buffer())
