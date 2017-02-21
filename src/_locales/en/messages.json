@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "Ext Starter",
+    "description": "The name of the application"
+  },
+  "btnTooltip": {
+    "message": "Ext Starter",
+    "description": "Tooltip for button"
+  },
+  "appDescription": {
+    "message": "Boilerplate for building cross browser extensions",
+    "description": "The description of the application"
+  }
+}

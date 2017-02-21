@@ -1,0 +1,51 @@
+{
+  "name": "extenstion-starter",
+  "version": "0.0.1",
+  "description": "Boilerplate for creating cross-browser extensions",
+  "scripts": {
+    "chrome-build": "TARGET=chrome gulp",
+    "opera-build": "TARGET=opera gulp",
+    "firefox-build": "TARGET=firefox gulp",
+    "build": "npm run chrome-build && npm run opera-build && npm run firefox-build",
+    "chrome-watch": "TARGET=chrome gulp watch",
+    "opera-watch": "TARGET=opera gulp watch",
+    "firefox-watch": "TARGET=firefox gulp watch",
+    "chrome-dist": "NODE_ENV=production TARGET=chrome gulp dist",
+    "opera-dist": "NODE_ENV=production TARGET=opera gulp dist",
+    "firefox-dist": "NODE_ENV=production TARGET=firefox gulp dist",
+    "dist": "npm run chrome-dist && npm run opera-dist && npm run firefox-dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EmailThis/extension-starter"
+  },
+  "author": "Bharani <bharani91@gmail.com> (https://github.com/bharani91)",
+  "bugs": {
+    "url": "https://github.com/EmailThis/extension-starter/issues"
+  },
+  "homepage": "https://www.emailthis.me/extension-starter",
+  "devDependencies": {
+    "babel-core": "^6.1.2",
+    "babel-preset-es2015": "^6.1.2",
+    "babelify": "^7.3.0",
+    "browserify": "^14.1.0",
+    "event-stream": "^3.3.4",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^0.5.3",
+    "gulp-merge-json": "^1.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-run-sequence": "*",
+    "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-zip": "^2.0.3",
+    "preprocessify": "^1.0.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

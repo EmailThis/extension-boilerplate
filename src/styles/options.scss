@@ -1,0 +1,19 @@
+@import "modules/reset";
+@import "modules/variables";
+@import "modules/grid";
+@import "modules/layout";
+@import "modules/utilities";
+
+.heading {
+  margin: 1em auto;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #eee;
+
+  h1 + .lead {
+    margin-top: 0.2em;
+  }
+}
+
+.content {
+  min-height: 300px;
+}

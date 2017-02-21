@@ -1,0 +1,11 @@
+@import "modules/reset";
+@import "modules/variables";
+@import "modules/layout";
+
+body {
+  padding: 1em;
+}
+.popup-content {
+  min-width: 180px;
+  min-height: 180px;
+}
