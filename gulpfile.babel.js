@@ -128,7 +128,7 @@ function buildJS(target) {
     'contentscript.js',
     'options.js',
     'popup.js',
-    'livereload.js',
+    'livereload.js'
   ]
 
   let tasks = files.map( file => {
@@ -144,8 +144,8 @@ function buildJS(target) {
     .bundle()
     .pipe(source(file))
     .pipe(buffer())
-    .pipe($.sourcemaps.init({ loadMaps: true }))
-    .pipe($.sourcemaps.write('./'))
+    .pipe(gulpif(!production, $.sourcemaps.init({ loadMaps: true }) ))
+    .pipe(gulpif(!production, $.sourcemaps.write('./') ))
     .pipe(gulp.dest(`build/${target}/scripts`));
   });
 

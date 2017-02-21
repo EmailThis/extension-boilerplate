@@ -6,7 +6,7 @@
     "chrome-build": "TARGET=chrome gulp",
     "opera-build": "TARGET=opera gulp",
     "firefox-build": "TARGET=firefox gulp",
-    "build": "npm run chrome-build && npm run opera-build && npm run firefox-build",
+    "build": "NODE_ENV=production npm run chrome-build && NODE_ENV=production  npm run opera-build && NODE_ENV=production  npm run firefox-build",
     "chrome-watch": "TARGET=chrome gulp watch",
     "opera-watch": "TARGET=opera gulp watch",
     "firefox-watch": "TARGET=firefox gulp watch",
