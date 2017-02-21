@@ -17,3 +17,22 @@
 .content {
   min-height: 300px;
 }
+
+.option {
+  margin: 1em auto;
+  h5 {
+    margin-bottom: 1em;
+  }
+
+  .radio-group  {
+    label {
+      display: block;
+    }  
+    input[type="radio"] {
+      display: inline-block;
+      margin: 3px 5px;
+    }
+  }
+}
+
+

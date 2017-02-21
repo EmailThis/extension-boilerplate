@@ -1,4 +1,13 @@
 import ext from "./utils/ext";
+import storage from "./utils/storage";
+
+var popup = document.getElementById("app");
+storage.get('color', function(resp) {
+  var color = resp.color;
+  if(color) {
+    popup.style.backgroundColor = color
+  }
+});
 
 var template = (data) => {
   var json = JSON.stringify(data);
@@ -33,7 +42,6 @@ ext.tabs.query({active: true, currentWindow: true}, function(tabs) {
   chrome.tabs.sendMessage(activeTab.id, { action: 'process-page' }, renderBookmark);
 });
 
-var popup = document.getElementById("app");
 popup.addEventListener("click", function(e) {
   if(e.target && e.target.matches("#save-btn")) {
     e.preventDefault();
@@ -46,4 +54,10 @@ popup.addEventListener("click", function(e) {
       }
     })
   }
+});
+
+var optionsLink = document.querySelector(".js-options");
+optionsLink.addEventListener("click", function(e) {
+  e.preventDefault();
+  ext.tabs.create({'url': ext.extension.getURL('options.html')});
 })

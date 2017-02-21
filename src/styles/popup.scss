@@ -2,14 +2,32 @@
 @import "modules/variables";
 @import "modules/layout";
 
-body {
-  background: $white;
+body, html {
+  padding: 0;
+  margin: 0;
+}
+
+#app {
   padding: 1em;
+  background: $white;
+}
+
+footer {
+  color: $text-secondary;
+  text-align: right;
+  font-size: 0.8em;
+  a {
+    outline: none;
+    color: lighten($text-secondary, 10%);
+    &:hover {
+      color: $text-secondary;
+    }
+  }
 }
 
 .popup-content {
   min-width: 220px;
-  min-height: 220px;
+  min-height: 100px;
   max-width: 350px;
 }
 
