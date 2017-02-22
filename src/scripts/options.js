@@ -18,6 +18,8 @@ storage.get('color', function(resp) {
 colorSelectors.forEach(function(el) {
   el.addEventListener("click", function(e) {
     var value = this.value;
-    storage.set({ color: value });
+    storage.set({ color: value }, function() {
+      document.body.style.backgroundColor = value;
+    });
   })
 })
