@@ -10,11 +10,11 @@
 
 Now that Firefox supports WebExtensions, it has become a lot easier to build browser extensions/addons for multiple browsers without duplicating the codebase. This project serves as a sensible starting point to help you get started.
 
-![Ext Boilerplate](./resources/chrome-promo/marquee.png)
+![Extention Boilerplate](./resources/chrome-promo/marquee.png)
 
 I have extracted this from the browser extensions that I built for my side-project, [Email This](https://www.emailthis.me).
 
-> Side note: Do check out [**Email This**](https://www.emailthis.me). It is a simpler alternative to bookmarking tools like Pocket, Readability & Instapaper. Email This will remove distractions & ads from an article and send you a nice email with just the text/images. You can then open up the email client on your laptop/mobile and read the article whenever you want. No need to install any additional applications or login to another app just to access your bookmarks.
+> Side note: Do check out [**Email This**](https://www.emailthis.me). It is a simpler alternative to bookmarking tools like Pocket, Readability & Instapaper. Email This will remove ads & distractions from an article and send you a nice email with just the text/images. You can then open up the email client on your laptop/mobile and read the article whenever you want. No need to install any additional applications or login to another app just to access your bookmarks.
 
 
 ## Features
@@ -36,7 +36,7 @@ I have extracted this from the browser extensions that I built for my side-proje
 <dl>
   <dt>Sensible starting point</dt>
   <dd>
-    This comes with a gulp based workflow that converts modern **ES6** JavaScript and **SCSS** to JS/CSS. 
+    This comes with a gulp based workflow that converts modern <strong>ES6</strong> JavaScript and <strong>SCSS</strong> to JS/CSS. 
   </dd>
 </dl>
 
@@ -68,15 +68,21 @@ I have extracted this from the browser extensions that I built for my side-proje
 ## Developing
 The following tasks can be used when you want to start developing the extension and want to enable live reload - 
 
-`npm rum chrome-watch`
-
-`npm run opera-watch`
-
-`npm run firefox-watch`
+- `npm rum chrome-watch`
+- `npm run opera-watch`
+- `npm run firefox-watch`
 
 
 ## Packaging
 Run `npm run dist` to create a zipped, production-ready extension for each browser. You can then upload that to the appstore.
+
+
+## TODO
+- [ ] Add support for Safari
+- [ ] Add Firefox & Opera Promo images
+- [ ] Add sample screenshot templates
+- [ ] Write a guide for using config variables & JS preprocessor
+
 
 -----------
 This project is licensed under the MIT license. 
