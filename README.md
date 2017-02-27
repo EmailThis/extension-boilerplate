@@ -76,7 +76,7 @@ Alternately, if you want to try out the sample extension, here are the download 
 ## Developing
 The following tasks can be used when you want to start developing the extension and want to enable live reload - 
 
-- `npm rum chrome-watch`
+- `npm run chrome-watch`
 - `npm run opera-watch`
 - `npm run firefox-watch`
 
