@@ -16,14 +16,8 @@ Now that Firefox supports WebExtensions, it has become a lot easier to build bro
 
 I have extracted this from the browser extensions that I built for my side-project, [Email This](https://www.emailthis.me).
 
-> Side note: Do check out [**Email This**](https://www.emailthis.me). It is a simpler alternative to bookmarking tools like Pocket, Readability & Instapaper. Email This will remove ads & distractions from an article and send you a nice email with just the text/images. You can then open up the email client on your laptop/mobile and read the article whenever you want. No need to install any additional applications or login to another app just to access your bookmarks.
-
-
-
-🔧 Easily configurable through the simple and understandable config in the main gulpfile
-📝 Well documented and commented, this makes it easy to customize it and bend it to your own will, also code is writtes as more humanly understandable as possible
-📦 Modular, if you don't need a certain task you can just remove it
-🆕 Up to date with the latest technologies and tools to make your development easier
+> Side note: Do check out [**Email This**](https://www.emailthis.me). It is a simpler alternative to bookmarking tools like Pocket, Readability & Instapaper. Email This will remove ads & distractions from an article and send you a nice email with just the text/images. No need to install any additional applications or login to another app just to access your bookmarks. 
+The Chrome Extensions is available [on the Chrome Web Store](https://chrome.google.com/webstore/detail/email-this/lgblkllcjgihfnlefhnnpppndbbjallh).
 
 
 ## Features
@@ -112,8 +106,8 @@ Run `npm run dist` to create a zipped, production-ready extension for each brows
 
 ## TODO
 - [ ] Add support for Safari
-- [ ] Add Firefox & Opera Promo images
-- [ ] Add sample screenshot templates
+- [x] Add Firefox & Opera Promo images
+- [x] Add sample screenshot templates
 - [ ] Write a guide for using config variables & JS preprocessor
 
 
