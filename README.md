@@ -19,6 +19,13 @@ I have extracted this from the browser extensions that I built for my side-proje
 > Side note: Do check out [**Email This**](https://www.emailthis.me). It is a simpler alternative to bookmarking tools like Pocket, Readability & Instapaper. Email This will remove ads & distractions from an article and send you a nice email with just the text/images. You can then open up the email client on your laptop/mobile and read the article whenever you want. No need to install any additional applications or login to another app just to access your bookmarks.
 
 
+
+🔧 Easily configurable through the simple and understandable config in the main gulpfile
+📝 Well documented and commented, this makes it easy to customize it and bend it to your own will, also code is writtes as more humanly understandable as possible
+📦 Modular, if you don't need a certain task you can just remove it
+🆕 Up to date with the latest technologies and tools to make your development easier
+
+
 ## Features
 
 <dl>
@@ -39,6 +46,8 @@ I have extracted this from the browser extensions that I built for my side-proje
   <dt>Sensible starting point</dt>
   <dd>
     This comes with a gulp based workflow that converts modern <strong>ES6</strong> JavaScript and <strong>SCSS</strong> to JS/CSS. 
+    Scripts are transpiled using Babel and bundled using Browserify.
+    Sourcemaps are available for both JS and SCSS.
   </dd>
 </dl>
 
@@ -46,6 +55,22 @@ I have extracted this from the browser extensions that I built for my side-proje
   <dt>Sketch (.sketch) assets for icons and promo images</dt>
   <dd>
     A .sketch file is included in the resources directory. This has all the icons and promo images that will be needed while uploading the extensions to the app stores.
+  </dd>
+</dl>
+
+<dl>
+  <dt>Easily configurable and extendable</dt>
+  <dd>
+    The gulpfile is easily understandable and configurable. If you want to add additional tasks or remove un-used ones, you can easily tweak that file to suit your needs.
+  </dd>
+</dl>
+
+<dl>
+  <dt>Platform specific & Environment specific variables.</dt>
+  <dd>
+    You might need to specify different data variables based on your environment. For example, you might want to use a localhost API endpoint during development and a production API endpoint once the extension is submitted to the appstore. You can specify such data in the json files inside `config` directory.
+
+    You can also set custom data variables based on the platform (different variable for Chrome, FF, Opera).
   </dd>
 </dl>
 

@@ -1,6 +1,6 @@
 {
   "name": "extenstion-boilerplate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A template for creating cross-browser extensions",
   "scripts": {
     "chrome-build": "TARGET=chrome gulp",
@@ -43,6 +43,7 @@
     "gulp-run-sequence": "*",
     "gulp-sass": "^2.2.0",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.4",
     "gulp-zip": "^2.0.3",
     "preprocessify": "^1.0.1",
     "vinyl-buffer": "^1.0.0",

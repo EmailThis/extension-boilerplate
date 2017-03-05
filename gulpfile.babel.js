@@ -147,6 +147,12 @@ function buildJS(target) {
     .pipe(buffer())
     .pipe(gulpif(!production, $.sourcemaps.init({ loadMaps: true }) ))
     .pipe(gulpif(!production, $.sourcemaps.write('./') ))
+    .pipe(gulpif(production, $.uglify({ 
+      "mangle": false,
+      "output": {
+        "ascii_only": true
+      } 
+    })))
     .pipe(gulp.dest(`build/${target}/scripts`));
   });
 
