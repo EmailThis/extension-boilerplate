@@ -11,7 +11,9 @@
 Now that Firefox supports WebExtensions, it has become a lot easier to build browser extensions/addons for multiple browsers without duplicating the codebase. This project serves as a sensible starting point to help you get started.
 
 <div align="center">
-  <img src="./resources/chrome-promo/large.png" alt="Extension Boilerplate">
+  <a href="https://www.emailthis.me/open-source/extension-boilerplate">
+    <img src="./resources/chrome-promo/large.png" alt="Extension Boilerplate">
+  </a>
 </div>
 
 I have extracted this from the browser extensions that I built for my side-project, [Email This](https://www.emailthis.me).
