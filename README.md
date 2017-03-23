@@ -90,7 +90,7 @@ Alternately, if you want to try out the sample extension, here are the download 
 
 
 ##### Load the extension in Firefox
-1. Open Firefox browser and navigate to about://debugging
+1. Open Firefox browser and navigate to about:debugging
 2. Click "Load Temporary Add-on" and from the file browser, choose `extension-boilerplate/build/firefox`
 
 
