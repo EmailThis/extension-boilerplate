@@ -82,10 +82,12 @@ gulp.task("manifest", () => {
   return gulp.src('./manifest.json')
     .pipe(gulpif(!production, $.mergeJson({
       fileName: "manifest.json",
+      jsonSpace: " ".repeat(4),
       endObj: manifest.dev
     })))
     .pipe(gulpif(target === "firefox", $.mergeJson({
       fileName: "manifest.json",
+      jsonSpace: " ".repeat(4),
       endObj: manifest.ff
     })))
     .pipe(gulp.dest(`./build/${target}`))
