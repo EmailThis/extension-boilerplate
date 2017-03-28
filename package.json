@@ -1,5 +1,5 @@
 {
-  "name": "extenstion-boilerplate",
+  "name": "extension-boilerplate",
   "version": "0.0.2",
   "description": "A template for creating cross-browser extensions",
   "scripts": {
