@@ -188,7 +188,7 @@ var renderCategorySelect = (t) => {
     categoryForm.innerHTML = `
         <form name="categories">
             <!--<label>Category</label>-->
-            <select name="category">
+            <select name="category" id="cat-select">
             ${formHTML}
             </select>
         </form>
@@ -220,15 +220,22 @@ ext.tabs.query({active: true, currentWindow: true}, function(tabs) {
 
 popup.addEventListener("click", function(e) {
   if(e.target && e.target.matches("#save-btn")) {
-    e.preventDefault();
-    var data = e.target.getAttribute("data-bookmark");
-    //console.log(data);
+      e.preventDefault();
+      var data = e.target.getAttribute("data-bookmark");
+      var sel = document.getElementById("cat-select");
+      var cat_id = Number(sel.options[sel.selectedIndex].value);
+
+      var json_obj = JSON.parse( data );
+      json_obj.category_id = cat_id;
+      data = JSON.stringify( json_obj );
+
     ext.runtime.sendMessage({ action: "perform-save", data: data }, function(response) {
-        //console.log('message sent');
+        console.log('message sent');
         if(response && response.action === "saved") {
         renderMessage("Your bookmark was saved successfully.");
       } else {
-        renderMessage("Sorry, there was an error while saving your bookmark.");
+            console.log(response.action);
+            //renderMessage("Sorry, there was an error while saving your bookmark.");
       }
     })
   }

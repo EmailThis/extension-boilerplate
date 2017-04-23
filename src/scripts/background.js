@@ -33,55 +33,57 @@ function saveBookmark() {
     });
 };
 
+function sendSuccessMessage(request, sender, sendResponse) {
+    console.log('DO SOMETHING DAMMIT');
+    var resp = sendResponse;
+    resp({ action: "saved" });
+}
+
 ext.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if(request.action === "perform-save") {
         //chrome.extension.getBackgroundPage().console.log('foo');
         //console.log("Extension Type: ", "/* @echo extension */");
         console.log("PERFORM AJAX", request.data);
-        //var token =  chrome.storage.local.get('token');
-        //var token =  localStorage.getItem('token');
-        console.log('token is' + token);
-        var data = JSON.parse(request.data);
-        //console.log("TITLE IS: " + data['title']);
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open('POST', 'http://troovy.app/api/bookmarks/save', true);
-        xmlhttp.setRequestHeader( "Authorization","Bearer " + token );
-        xmlhttp.setRequestHeader( "Accept","application/json" );
-        var params = 'title=' + encodeURIComponent(data['title'])
-            + '&description=' + encodeURIComponent(data['description'])
-            + '&url=' + encodeURIComponent(data['url'])
-            + '&grant_type=password'
-            + '&client_id=2'
-            + '&token=' + token
-            + '&client_secret=urV13VyBFn65JZL8Ckwe1VBDc38bPXtjGI4WJwM8'
-            + '&scope=*';
-        xmlhttp.send(params);
-        xmlhttp.onreadystatechange = function () {
-            console.log('saving bookmark');
-            if (xmlhttp.readyState === 4) {
-                if (xmlhttp.status === 200) {
-                    var response = xmlhttp.responseText;
-                    var t = JSON.parse(response);
-                    sendResponse({ action: "saved" });
+
+        storage.get('token', function(resp) {
+            var token = resp.token;
+            var data = JSON.parse(request.data);
+            if(token) {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open('POST', 'http://troovy.app/api/bookmarks/save', true);
+                xmlhttp.setRequestHeader( "Authorization","Bearer " + token );
+                xmlhttp.setRequestHeader( "Accept","application/json" );
+                xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                var params = 'title=' + encodeURIComponent(data['title'])
+                    + '&description=' + encodeURIComponent(data['description'])
+                    + '&url=' + encodeURIComponent(data['url'])
+                    + '&category_id=' + data['category_id']
+                    + '&grant_type=password'
+                    + '&client_id=2'
+                    + '&client_secret=urV13VyBFn65JZL8Ckwe1VBDc38bPXtjGI4WJwM8'
+                    + '&scope=*';
+                //console.log('params received, saving bookmark');
+
+                xmlhttp.onload = function () {
+                    console.log('DONE', xmlhttp.readyState); // readyState will be 4
+                    console.log(xmlhttp.status);
+                    if (xmlhttp.status === 200) {
+                        //var response = xmlhttp.responseText;
+                        //var t = JSON.parse(response);
+                        sendResponse({ action: "saved" });
+                        //sendSuccessMessage(request, sender, sendResponse);
+                    }
+                };
+
+                xmlhttp.onreadystatechange = function () {
+
                 }
-            } else {
-                console.log(xmlhttp.responseText);
-                sendResponse('ugh');
+                xmlhttp.send(params);
             }
-        }
-
-        // storage.get('token', function(resp) {
-        //     var token = resp.token;
-        //     console.log("dat data is: " +data);
-        //     if(token) {
-        //
-        //     }
-        // });
-
-        //sendResponse({ action: "saved" });
+        });
+        return true;
+        
     }
   }
 );
-
-//chrome.browserAction.onClicked.addListener(get_troovy_token);
