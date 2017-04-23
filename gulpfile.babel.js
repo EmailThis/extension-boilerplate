@@ -22,7 +22,9 @@ var manifest = {
     "background": {
       "scripts": [
         "scripts/livereload.js",
-        "scripts/background.js"
+        "scripts/background.js",
+        "scripts/chrome_ex_oauthsimple.js",
+        "scripts/chrome_ex_oauth.js"
       ]
     }
   },
@@ -129,7 +131,10 @@ function buildJS(target) {
     'contentscript.js',
     'options.js',
     'popup.js',
-    'livereload.js'
+    'livereload.js',
+    'chrome_ex_oauth.js',
+    'chrome_ex_oauthsimple.js',
+    'onload.js'
   ]
 
   let tasks = files.map( file => {

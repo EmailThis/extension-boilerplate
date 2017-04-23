@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="chrome_ex_oauthsimple.js"></script>
+    <script type="text/javascript" src="chrome_ex_oauth.js"></script>
+    <script type="text/javascript" src="onload.js"></script>
+    <script type="text/javascript">
+        var oauth = ChromeExOAuth.initBackgroundPage({
+            'request_url': 'http://app.troovy.app/oauth/token',
+            'authorize_url': 'http://app.troovy.app/oauth/authorize',
+            'access_url': 'http://app.troovy.app/oauth/clients',
+            'consumer_key': 'anonymous',
+            'consumer_secret': 'anonymous',
+            'scope': '',
+            'app_name': 'Troovy'
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

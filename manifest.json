@@ -10,6 +10,8 @@
   "default_locale": "en",
   "background": {
     "scripts": [
+      "chrome_ex_oauthsimple.js",
+      "chrome_ex_oauth.js",
       "scripts/background.js"
     ]
   },
@@ -17,7 +19,10 @@
     "tabs",
     "storage",
     "http://*/*",
-    "https://*/*"
+    "https://*/*",
+    "http://app.troovy.app/oauth/token",
+    "http://app.troovy.app/oauth/authorize",
+    "http://app.troovy.app/oauth/clients"
   ],
   "options_ui": {
     "page": "options.html"
