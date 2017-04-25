@@ -10,8 +10,6 @@
   "default_locale": "en",
   "background": {
     "scripts": [
-      "chrome_ex_oauthsimple.js",
-      "chrome_ex_oauth.js",
       "scripts/background.js"
     ]
   },

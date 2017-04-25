@@ -83,7 +83,8 @@ function get_troovy_token(username,password) {
                 var value = t['access_token'];
 
                 // Store our access token in local storage
-                chrome.storage.local.set({
+                //chrome.storage.local.set({
+                storage.set({
                     'token': value
                 }, function() {
                     console.log("The value stored was: " + value);
@@ -114,7 +115,7 @@ function get_categories() {
                     if (xmlhttp.status === 200) {
                         var response = xmlhttp.responseText;
                         var t = JSON.parse(response);
-                        chrome.storage.local.set({cacheCategories: t, cacheTime: Date.now()}, function() {
+                        storage.set({cacheCategories: t, cacheTime: Date.now()}, function() {
                             //callback(t);
                         });
                         renderCategorySelect(t);
