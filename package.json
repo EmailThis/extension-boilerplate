@@ -41,6 +41,7 @@
     "clean-webpack-plugin": "^0.1.5",
     "copy-webpack-plugin": "^4.0.1",
     "event-stream": "^3.3.4",
+    "extract-text-webpack-plugin": "^2.1.0",
     "fs-extra": "^0.26.5",
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.0",

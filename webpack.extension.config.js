@@ -4,6 +4,7 @@ var Clean = require('clean-webpack-plugin');
 var path = require("path");
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var _entryDirname = "./src/scripts" ;
 var __targetDirname = "./build/" + process.env.TYPE ;
@@ -27,6 +28,7 @@ var plugins = [
             { from: './src/popup.html', to: path.resolve(__targetDirname)},
             { from: './src/styles', to: path.resolve(__targetDirname + "/styles")},
     ]),
+    new ExtractTextPlugin('style.css')
 ];
 
 module.exports = {
@@ -45,11 +47,6 @@ module.exports = {
     },
     module: {
         loaders: [
-            {
-                test: /\.scss$/,
-                loader: "style-loader!css-loader!sass-loader",
-                include: [path.resolve('./build/chrome/styles')]
-            },
             {
                 test: /\.styl/,
                 loaders: "style-loader!css-loader!stylus-loader",
