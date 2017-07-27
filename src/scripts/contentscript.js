@@ -30,5 +30,4 @@ function onRequest(request, sender, sendResponse) {
     sendResponse(extractTags())
   }
 }
-
 ext.runtime.onMessage.addListener(onRequest);

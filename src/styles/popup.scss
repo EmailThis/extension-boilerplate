@@ -7,9 +7,14 @@ body, html {
   margin: 0;
 }
 
+#progress {
+  overflow: auto;
+}
+
 #app {
   padding: 20px 20px;
   background: $white;
+  width:300px;
 }
 
 footer {
@@ -35,7 +40,7 @@ footer {
   font-size: 14px;
   text-transform: uppercase;
   color: $text-secondary;
-  text-align: center;
+  text-align: left;
   margin: 0 auto 1em auto;
   padding: 0;
 }
@@ -85,4 +90,39 @@ footer {
   border-radius: 2px;
   outline: none;
   font-size: 1em;
+}
+.category-form select {
+  background: #444;
+  width: 268px;
+  padding: 3px;
+  font-size: 14px;
+  color: #ededed;
+  line-height: 1;
+  border-radius: 0;
+  border: 1px solid #fefefe;
+  height: 34px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
 }
