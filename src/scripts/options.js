@@ -1,30 +1,30 @@
-import ext from "./utils/ext";
-import storage from "./utils/storage";
+import storage from './utils/storage';
 
-var colorSelectors = document.querySelectorAll(".js-radio");
+const colorSelectors = document.querySelectorAll('.js-radio');
 
-var setColor = (color) => {
+const setColor = color => {
   document.body.style.backgroundColor = color;
 };
 
-storage.get('color', function(resp) {
-  var color = resp.color;
-  var option;
-  if(color) {
+storage.get('color', resp => {
+  let color = resp.color;
+  let option;
+
+  if (color) {
     option = document.querySelector(`.js-radio.${color}`);
     setColor(color);
   } else {
-    option = colorSelectors[0]
+    option = colorSelectors[0];
   }
 
-  option.setAttribute("checked", "checked");
+  option.setAttribute('checked', 'checked');
 });
 
-colorSelectors.forEach(function(el) {
-  el.addEventListener("click", function(e) {
-    var value = this.value;
-    storage.set({ color: value }, function() {
+colorSelectors.forEach(el => {
+  el.addEventListener('click', function (e) {
+    let value = this.value;
+    storage.set({color: value}, function () {
       setColor(value);
     });
-  })
-})
+  });
+});
