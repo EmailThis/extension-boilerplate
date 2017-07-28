@@ -1,5 +1,6 @@
 import ext from './utils/ext';
 import storage from './utils/storage';
+import * as Templates from './utils/templates';
 
 const popup           = document.getElementById('app');
 const troovyLoginForm = document.getElementById('troovyLoginForm');
@@ -39,7 +40,7 @@ function checkAuth() {
       console.log('no token found');
 
       let displayContainer = document.getElementById('display-container');
-      let tmpl             = loginForm();
+      let tmpl             = Templates.login();
 
       displayContainer.innerHTML = tmpl;
     }
@@ -51,7 +52,7 @@ const renderBookmark = data => {
   let titleContainer   = document.getElementById('title-container');
 
   if (data) {
-    let tmpl = template(data);
+    let tmpl = Templates.main(data);
 
     titleContainer.innerHTML = '<h3 class=\'title\'>' + data.title + '</h3>';
 
@@ -99,21 +100,8 @@ function getCategories() {
 
 const renderCategorySelect = t => {
   let categoryForm = document.getElementById('category-form');
-  let formHTML;
 
-  for (let i = 0, len = t.length; i < len; i++) {
-    formHTML += '<option value="' + t[i]['id'] + '">' + t[i]['name'] + '</option>';
-  }
-
-  // @ToDo: Move this into the templates module.
-  categoryForm.innerHTML = `
-        <form name="categories">
-            <!--<label>Category</label>-->
-            <select name="category" id="cat-select">
-            ${formHTML}
-            </select>
-        </form>
-    `;
+  categoryForm.innerHTML = Templates.categorySelect(t);
 };
 
 function scanPage() {
@@ -230,56 +218,3 @@ optionsLink.addEventListener('click', event => {
   event.preventDefault();
   ext.tabs.create({'url': ext.extension.getURL('options.html')});
 });
-
-// ----------------------------------------------------------------------------
-// @ToDo: Move templates to a separate module to keep code clean and organized.
-// ----------------------------------------------------------------------------
-const loginForm = () => {
-  return (`
-  <div>
-    <form id="troovyLoginForm" name="troovyLoginForm">
-        <label>Email</label>
-        <div class="form-group" style="margin-bottom: 15px">
-            <input type="text" name="username" id="username" value="" placeholder="email"/>
-        </div>
-        <label>Password</label>
-        <div class="form-group" style="margin-bottom: 15px">
-            <input type="password" name="password" value="" placeholder="password"/>
-        </div>
-        <button class="btn btn-primary" id="btn-login" type="submit" style="margin-bottom: 15px">Login</button>
-    </form>
-  </div>
-  `);
-};
-
-const template = data => {
-  let json = JSON.stringify(data);
-
-  return (`
-  <form name="save-page" id="formSavePage">
-  <div class="site-description">
-        <input type="hidden" name="url" value="${data.url}">
-        <input type="hidden" name="title" value="${data.title}">
-        <textarea name="description" style="display:block;width:100%;height:75px;background-color:#444";border:1px #efefef;">${data.description}</textarea>
-  </div>
-  <div class="action-container">
-    <button data-bookmark='${json}' id="save-btn" class="btn btn-primary">Save</button>
-  </div>
-  </form>
-  `);
-};
-
-const templateOG = data => {
-  let json = JSON.stringify(data);
-
-  return (`
-  <div class="site-description">
-    <h3 class="title">${data.title}</h3>
-    <p class="description">${data.description}</p>
-    <a href="${data.url}" target="_blank" class="url">${data.url}</a>
-  </div>
-  <div class="action-container">
-    <button data-bookmark='${json}' id="save-btn" class="btn btn-primary">Save</button>
-  </div>
-  `);
-};
