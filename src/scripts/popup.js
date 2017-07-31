@@ -4,6 +4,7 @@ import * as Templates from './utils/templates';
 
 const popup           = document.getElementById('app');
 const troovyLoginForm = document.getElementById('troovyLoginForm');
+const optionsLink     = document.querySelector('.js-options');
 
 let userToken;
 let __requestCode;
@@ -29,7 +30,7 @@ function checkAuth() {
 
     if (token) {
 
-      // @ToDo: Figure out what this is for and if it is needed.
+      // @ToDo: Figure out what this is for and if it is needed here.
       //get_categories();
 
       scanPage();
@@ -47,7 +48,7 @@ function checkAuth() {
   });
 }
 
-const renderBookmark = data => {
+function renderBookmark(data) {
   let displayContainer = document.getElementById('display-container');
   let titleContainer   = document.getElementById('title-container');
 
@@ -62,13 +63,13 @@ const renderBookmark = data => {
   } else {
     renderMessage('Sorry, could not extract this page\'s title and URL');
   }
-};
+}
 
-const renderMessage = message => {
+function renderMessage(message) {
   let displayContainer = document.getElementById('display-container');
 
   displayContainer.innerHTML = `<p class='message'>${message}</p>`;
-};
+}
 
 function getCategories() {
   storage.get('token', function (resp) {
@@ -98,11 +99,11 @@ function getCategories() {
   });
 }
 
-const renderCategorySelect = t => {
+function renderCategorySelect(t) {
   let categoryForm = document.getElementById('category-form');
 
   categoryForm.innerHTML = Templates.categorySelect(t);
-};
+}
 
 function scanPage() {
   ext.tabs.query({active: true, currentWindow: true}, tabs => {
@@ -199,10 +200,10 @@ popup.addEventListener('click', event => {
         //renderMessage("Sorry, there was an error while saving your bookmark.");
       }
     });
-  }
-});
 
-popup.addEventListener('click', event => {
+    return;
+  }
+
   if (event.target && event.target.matches('#btn-login')) {
     event.preventDefault();
 
@@ -211,8 +212,6 @@ popup.addEventListener('click', event => {
     getTroovyToken(username, password);
   }
 });
-
-const optionsLink = document.querySelector('.js-options');
 
 optionsLink.addEventListener('click', event => {
   event.preventDefault();
