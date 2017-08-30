@@ -28,3 +28,23 @@ colorSelectors.forEach(el => {
     });
   });
 });
+
+const clientSecret = document.getElementById('client-secret');
+
+storage.get('troovySecret', resp => {
+  if (resp.troovySecret) {
+    clientSecret.value = resp.troovySecret;
+  }
+});
+
+clientSecret.addEventListener('keyup', (event) => {
+  storage.set({troovySecret: event.target.value}, () => {
+    console.log('stored');
+  });
+});
+
+// document.getElementById('save-options').addEventListener('click', (event) => {
+//   event.preventDefault();
+//
+//   console.log(clientSecret.value);
+// });
