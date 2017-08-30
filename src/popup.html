@@ -12,19 +12,32 @@
   </ul>
     <div id="app" class="popup-content">
       <!--<h1 class="app-name">Troovy | Save Page</h1>-->
-      <div id="title-container"></div>
-      <div id="category-form" class="category-form"></div>
-      <div id="display-container"></div>
-      <div id="progress-icon"></div>
-      <div id="progress-text"></div>
+      <div class="loading">
+        <div id="progress-text">Checking stuff, please wait.</div>
+        <div id="progress-icon">
+          <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+          </div>
+        </div>
+      </div>
 
-      <footer>
-        <p>
-          <small>
-            <a href="#" class="js-options">Options</a>
-          </small>
-        </p>
-      </footer>
+      <div class="content-wrapper hide">
+        <div id="title-container"></div>
+        <div id="category-form"></div>
+        <div id="display-container"></div>
+
+        <footer id="extension-footer">
+          <p>
+            <small>
+              <a href="#" class="js-options">Options</a>
+            </small>
+          </p>
+        </footer>
+      </div>
+
+      <div id="feedback-message"></div>
+
     </div>
     
     <script src="scripts/popup.js"></script>
