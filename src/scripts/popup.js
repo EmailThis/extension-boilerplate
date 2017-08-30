@@ -101,7 +101,6 @@ popup.addEventListener('click', event => {
   if (event.target && event.target.matches('#save-btn')) {
     event.preventDefault();
 
-    // let data   = event.target.getAttribute('data-bookmark');
     let data   = {
       title      : document.getElementById('bookmark-title').value,
       url        : document.getElementById('bookmark-url').value,
@@ -109,13 +108,7 @@ popup.addEventListener('click', event => {
     };
     let sel    = document.getElementById('cat-select');
 
-    // let json_obj         = JSON.parse(data);
-    // console.log(json_obj);
-    // json_obj.category_id = cat_id;
-
     data.category_id = Number(sel.options[sel.selectedIndex].value);
-
-    // data = JSON.stringify(data);
 
     console.log('Sending request...');
 

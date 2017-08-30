@@ -1,16 +1,19 @@
 export const main = data => {
+  // let description = data.description; // Holds unescaped description.
+  // data.description = data.description.replace(/'/g, "\'");
+  // console.log(data);
   let json = JSON.stringify(data);
 
   return `
     <form name="save-page" id="formSavePage">
-    <div class="site-description">
-          <input type="hidden" name="url" value="${data.url}">
-          <input type="hidden" name="title" value="${data.title}">
-          <textarea name="description" style="display:block;width:100%;height:75px;background-color:#444";border:1px #efefef;">${data.description}</textarea>
-    </div>
-    <div class="action-container">
-      <button data-bookmark='${json}' id="save-btn" class="btn btn-primary">Save</button>
-    </div>
+      <div class="site-description">
+            <input id="bookmark-url" type="hidden" name="url" value="${data.url}">
+            <input id="bookmark-title" type="hidden" name="title" value="${data.title}">
+            <textarea id="bookmark-description" class="description" name="description">${data.description}</textarea>
+      </div>
+      <div class="action-container">
+        <button id="save-btn" class="btn btn-primary">Save</button>
+      </div>
     </form>
   `;
 };
