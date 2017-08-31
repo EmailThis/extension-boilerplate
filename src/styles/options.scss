@@ -24,15 +24,37 @@
     margin-bottom: 1em;
   }
 
-  .radio-group  {
+  .radio-group {
     label {
       display: block;
-    }  
+    }
     input[type="radio"] {
       display: inline-block;
       margin: 3px 5px;
     }
   }
+
+  input[type=text] {
+    background: transparent;
+    border-bottom: 1px solid black;
+    padding: 5px;
+    width: 50%;
+  }
+}
+
+.button {
+  background: none;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.5em 1.5em;
+  background: $brand-primary;
+  color: $white;
+  font-weight: $headings-font-weight;
+  border-radius: 2px;
+  outline: none;
+  font-size: 1em;
+  margin-top: 20px;
 }
 
 
