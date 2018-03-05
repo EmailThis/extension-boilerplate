@@ -105,6 +105,11 @@ The following tasks can be used when you want to start developing the extension 
 ## Packaging
 Run `npm run dist` to create a zipped, production-ready extension for each browser. You can then upload that to the appstore.
 
+## Using config variables
+The files in your `src/scripts` directory are run through a preprocessor during the build stage, and you can use this to set custom data variables based on your environment (Development/Product) or platform (Chrome/Firefox/Opera).
+1. In your `config` directory, add whatever variables you want to set, for instance, `API_URL`
+2. In your code, use `/* @echo API_URL */` and the preprocessor will replace it with the correct value based on environment and platform
+3. If building for production, set the environment variable `NODE_ENV` to `production` and your production variables will get filled in
 
 ## TODO
 - [ ] Add support for Safari
