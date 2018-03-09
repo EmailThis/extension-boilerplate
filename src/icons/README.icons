@@ -1,0 +1,24 @@
+please explain why there are so many different sized icons
+
+* for example, what purpose does each one serve?
+
+* and how and where should each be used?
+
+* for example, which is appropriate for `Ext.browserAction.setIcon()`?
+
+* is there a particular reason why there are exactly 5 icons?
+
+* why these specific sizes? are they pixel-perfect for some browsers?
+  - if not, then why the odd sizes like 19 instead of all powers of 2?
+
+only 2 of them are referenced - both in the manifest.json:
+
+    "default_icon": {
+      "19": "icons/icon-19.png",
+      "38": "icons/icon-38.png"
+    },
+
+* why are there multiple "default" icons? (the word "default" implies only "one")
+
+* the mozilla docs vaguely indicate that the browser may select icons from the set depending on screen size
+  - but is there a particular reason why there are exactly 2 "default" icons - why not 1, 3, or 4?
