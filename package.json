@@ -25,13 +25,15 @@
   },
   "homepage": "https://www.emailthis.me/extension-boilerplate",
   "devDependencies": {
-    "babel-core": "^6.1.2",
-    "babel-preset-es2015": "^6.1.2",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "@babel/register": "^7.4.4",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.4.4",
     "babelify": "^10.0.0",
     "browserify": "^16.2.3",
     "cross-env": "^5.2.0",
     "event-stream": "^4.0.1",
-    "gulp": "^4.0.1",
+    "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-eslint": "^5.0.0",
@@ -50,7 +52,5 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^2.0.0"
   },
-  "dependencies": {
-    "@babel/core": "^7.0.0"
-  }
+  "dependencies": {}
 }
