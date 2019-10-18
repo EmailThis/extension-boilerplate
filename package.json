@@ -42,7 +42,7 @@
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-run-sequence": "*",
-    "gulp-sass": "^2.2.0",
+    "gulp-sass": "3.0.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.4",
     "gulp-zip": "^2.0.3",
