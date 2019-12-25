@@ -5,3 +5,4 @@ dist
 .sass-cache
 .DS_Store
 build
+yarn.lock
