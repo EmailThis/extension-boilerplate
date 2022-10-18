@@ -26,7 +26,7 @@
   "homepage": "https://www.emailthis.me/extension-boilerplate",
   "devDependencies": {
     "@babel/core": "^7.19.3",
-    "@babel/preset-env": "^7.19.3",
+    "@babel/preset-env": "^7.19.4",
     "@babel/register": "^7.18.9",
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
